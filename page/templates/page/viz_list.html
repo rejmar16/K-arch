@@ -1,0 +1,21 @@
+{% extends 'page/base.html' %}
+{% block name %}
+<title>K-Arch | Vizualizace</title>
+{% endblock %}
+
+{% block content %}
+<div class="clear"></div>
+{% for post in vizualizace %}
+
+<div class="gallery">
+  <a>
+    <img src="{{ post.screen.url }}" alt="{{ post.name }}" width=600px>
+  </a>
+  <div class="desc">{{ post.name }}</div>
+</div>
+
+{% endfor %}
+
+<div class="clear"></div>
+
+{% endblock %}

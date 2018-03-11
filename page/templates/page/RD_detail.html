@@ -1,0 +1,83 @@
+{% extends 'page/base.html' %}
+{% block name %}
+<title>K-Arch | {{ post.name }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none}
+
+.demo {cursor:pointer}
+</style>
+{% endblock %}
+{% block navig %}
+
+<div class="navigace">
+  <br />
+  <nav>
+    <ul class="sf-menu">
+     <li class="but"><a href="{% url 'rd_filter_RD' %}">rodinné domy</a></li>
+     <li class="but"><a href="{% url 'rd_filter_INTER' %}">interiéry</a></li>
+     <li class="but"><a href="{% url 'rd_filter_JINE' %}">jiné</a></li>
+   </ul>
+  </nav>
+
+
+</div>
+{% endblock %}
+{% block content %}
+<div class="clear"></div>
+
+<div>
+      <div class="uvodni">
+      {% for p in photos %}
+      <img  class="mySlides" src="{{ p.photo.url }}">
+
+      {% endfor %}
+      </div>
+      <h1 class="nadpis_uvodni">{{ post.name }}</h1>
+      <div class="popis">{{ post.text|linebreaksbr }}</div>
+</div>
+<div class="clear"></div>
+  <!--  <div class="w3-row-padding w3-section">-->
+
+
+        {% for p in photos %}
+        <div class="gallery_detail">
+        <img src="{{ p.photo.url }}" style="width:100%" onclick="currentDiv({{ forloop.counter0 }})">
+        <div class="desc_detail" onclick="currentDiv({{ forloop.counter0 }})">{{ p.photo_name }}</div>
+        </div>
+        {% endfor %}
+<div class="clear"></div>
+
+
+  <script>
+  var slideIndex = 1;
+  showDivs(slideIndex);
+
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
+
+  function currentDiv(n) {
+    showDivs(slideIndex = n+1);
+  }
+
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+       dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+    }
+    x[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " w3-opacity-off";
+  }
+  </script>
+
+
+{% endblock %}

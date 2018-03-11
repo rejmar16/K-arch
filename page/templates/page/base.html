@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="cs">
+  <head>
+
+    <link rel="stylesheet" href="{% static 'css/page2.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/png" href="{% static 'icony/ikona1.png' %}" />
+    {% block name %}
+    {% endblock %}
+
+<script>
+function toggleClass(el){
+	var kids = document.getElementById('menu1').children;
+	for(var i = 0; i < kids.length; i++){
+        kids[i].className = "but";
+    }
+	el.className = "but2";
+}
+</script>
+
+  </head>
+  <body>
+    <a href="{% url 'rd_list' %}"><img class="logo" src="{% static 'icony/logo.jpg' %}" width=100px></a>
+
+    <div class="navigace" id="myDIV">
+      <nav>
+
+        <ul id="menu1">
+         <li class="but2"  onclick="toggleClass(this)"><a href="{% url 'rd_list' %}">projekty</a></li>
+         <li class="but"  onclick="toggleClass(this)"><a href="{% url 'viz_list' %}">vizualizace</a></li>
+         <li class="but"  onclick="toggleClass(this)"><a href="{% url 'contact_list' %}">studio</a></li>
+       </ul>
+      </nav>
+    </div>
+
+
+    {% block navig %}
+    {% endblock %}
+    <div class="clear"></div>
+
+      {% block content %}
+      {% endblock %}
+  </body>
+
+  <footer id="footer">
+
+
+          <!-- <div class="copyright"><div><strong>Kamas Architekti</strong></div>
+            Website designed by <a href="mailto:martin.rejhon@seznam.cz" rel="nofollow">Mart</a>-->
+            </div>
+<a href="http://www.kr-ustecky.cz/" target="_blank"><img class="podpora" src="{% static 'icony/podporil_UK_logo_svisle_ZELENE.png' %}" width=100px></a>
+<div class="clear"></div>
+
+  </footer>
+
+</html>

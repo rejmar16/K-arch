@@ -1,0 +1,305 @@
+/* logo */
+.logo {
+  margin-left: 10px;
+  float: left;
+}
+
+
+/* podpora */
+
+.podpora {
+  margin-right: 20px;
+  float: right;
+}
+/* navigace hlavni */
+
+.navigace{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 150px;
+}
+
+.navigace .but a {
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  color: #000000;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 18px;
+  font-weight: 300;
+  display: inline-block;
+
+  text-align: center;
+
+}
+
+
+.but a:hover {
+  background-color: black;
+  color:white;
+}
+
+.but a:focus {
+  background-color: black;
+  color:white;
+}
+.but a:selected {
+  background-color: black;
+  color:white;
+}
+/*ul#nav li a.active {
+	padding-top: 15px;
+	background-color: #075a97;
+	border: 1px solid #333;
+	border-top: none;
+}*/
+.but a.active {
+  background-color: black;
+  color:white;
+}
+.but{
+
+  margin-right: 40px;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  padding: 2px 0 1px;
+  display: block;
+	position: relative;
+	float: left;
+  cursor: pointer;
+
+}
+
+
+.navigace .but2 a {
+  background-color: black;
+  color: white;
+  border-radius: 3px;
+
+  font-family: "Courier New", Courier, monospace;
+  font-size: 18px;
+  font-weight: 300;
+  display: inline-block;
+
+  text-align: center;
+
+}
+
+.but2 a:hover {
+  background-color: black;
+  color:white;
+}
+
+.but2 a:focus {
+  background-color: black;
+  color:white;
+}
+.but2 a:selected {
+  background-color: black;
+  color:white;
+}
+/*ul#nav li a.active {
+	padding-top: 15px;
+	background-color: #075a97;
+	border: 1px solid #333;
+	border-top: none;
+}*/
+.but2 a.active {
+  background-color: black;
+  color:white;
+}
+.but2{
+
+  margin-right: 40px;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 2px 0 1px;
+  display: block;
+	position: relative;
+	float: left;
+  cursor: pointer;
+
+}
+
+
+.clear {
+    float: none !important;
+    clear: both;
+    height: 3px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+/* galerie fotek */
+
+.galllery {
+    /*margin: 5px;*/
+    margin-left: 10px;
+    margin-top: 10px;
+    border: 1px solid #FFFFFF;
+    float: left;
+    width: 600px;
+}
+
+.galllery:hover {
+    border: 1px solid #777;
+}
+
+.galllery img {
+    width: 100%;
+    height: auto;
+}
+
+.desc {
+    padding: 15px;
+    text-align: right;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+/*detaily*/
+.uvodni {
+  margin-left: 10px;
+  margin-top: 10px;
+  float: left;
+  width: 920px;
+
+}
+
+.uvodni img {
+  width: 100%;
+  height: auto;
+  float:left;
+}
+
+.mySlides {
+  float: left;
+  padding: 10px;
+}
+
+.nadpis_uvodni {
+  text-align: left;
+  padding-top: 20px;
+  /*margin-left: 960px;*/
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  font-weight: 300;
+  padding-left: 20px;
+  /*margin-left: 20px;960px;*/
+  margin-right: 20px;
+
+}
+
+.popis {
+  text-align: left;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  font-weight: 300;
+  padding-top: 10px;
+  padding-left: 20px;
+  /*margin-left: 20px;960px;*/
+  margin-right: 20px;
+  /*float: right;*/
+}
+.gallery_detail {
+    margin-left: 20px;
+    margin-top: 10px;
+    border: 0px solid #ccc;
+    float: left;
+    width: 300px;
+    border: 1px solid #FFF;
+}
+
+.gallery_detail:hover {
+    border: 1px solid #777;
+}
+
+.gallery_detail img {
+    width: 100%;
+    height: auto;
+}
+
+.desc_detail {
+    padding: 5px;
+    text-align: right;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+    font-weight: 300;
+}
+/* vizualizace */
+
+.gallery {
+    margin: 5px;
+    border: 1px solid #FFF;
+    float: left;
+    width: 600px;
+}
+
+.gallery:hover {
+    border: 1px solid #777;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* studio */
+
+.photo_me {
+  margin-left: 10px;
+  margin-top: 10px;
+  border: 0px solid #ccc;
+  float: left;
+  width: 310px;
+}
+
+.photo_me img {
+  width: 100%;
+  height: auto;
+}
+
+
+.adresa {
+  padding-top: 10px;
+  margin-left: 330px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.studio {
+  padding-top: 10px;
+  margin: auto;
+  margin-left: 330px;
+  margin-right: 750px;
+  text-align: left;
+  font-family: "Courier New", Courier, monospace;
+}
+/* Zapati */
+
+#footer {
+    margin: 40px;
+    /*display: block;*/
+    color: #908b8b;
+    font-size: 14px;
+    line-height: 18px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+
+
+#footer strong {
+    font-weight: 300;
+    font-size: 14px;
+    position: relative;
+    top: -2px;
+}
+
+.copyright {
+    float: left;
+    padding-top: 7px;
+    margin-bottom: 50px;
+}

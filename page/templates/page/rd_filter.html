@@ -1,0 +1,60 @@
+{% extends 'page/base.html' %}
+{% block name %}
+<title>K-Arch | Projekty | {{ name }}</title>
+{% endblock %}
+
+
+{% block navig %}
+<div class="navigace">
+  <br />
+  <nav>
+    <ul class="sf-menu">
+      {% if 'RD' == type %}
+      <li class="but2"><a href="{% url 'rd_filter_RD' %}">rodinné domy</a></li>
+      {% else %}
+      <li class="but"><a href="{% url 'rd_filter_RD' %}">rodinné domy</a></li>
+      {% endif %}
+      {% if 'INTER' == type %}
+      <li class="but2"><a href="{% url 'rd_filter_INTER' %}">interiéry</a></li>
+      {% else %}
+      <li class="but"><a href="{% url 'rd_filter_INTER' %}">interiéry</a></li>
+      {% endif %}
+      {% if 'JINE' == type %}
+      <li class="but2"><a href="{% url 'rd_filter_JINE' %}">jiné</a></li>
+      {% else %}
+      <li class="but"><a href="{% url 'rd_filter_JINE' %}">jiné</a></li>
+      {% endif %}
+   </ul>
+  </nav>
+
+
+</div>
+{% endblock %}
+{% block content %}
+{% for post in rd %}
+  <div class="galllery">
+
+    {% if post.type == type %}
+      <a href="{% url 'RD_detail' pk=post.pk %}">
+        <img src="{{ post.screen.url }}" alt="{{ post.name }}" width=300px>
+      </a>
+      <div class="desc">{{ post.name }}</div>
+
+
+    {% else %}
+    <!--<div style="opacity:0.5 ; filter:grayscale(100%)">-->
+      <a href="{% url 'RD_detail' pk=post.pk %}" style="opacity:0.5 ; filter:grayscale(100%)">
+        <img src="{{ post.screen.url }}" alt="{{ post.name }}" width=300px>
+      </a>
+      <div class="desc">{{ post.name }}</div>
+    {% endif %}
+
+  </div>
+{% endfor %}
+
+
+<div class="clear"></div>
+
+
+
+{% endblock %}

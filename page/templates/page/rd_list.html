@@ -1,0 +1,40 @@
+{% extends 'page/base.html' %}
+
+{% block name %}
+<title>K-Arch | Projekty</title>
+{% endblock %}
+
+
+{% block navig %}
+
+<div class="navigace">
+  <br />
+  <nav>
+    <ul class="sf-menu">
+     <li class="but"><a href="{% url 'rd_filter_RD' %}">rodinné domy</a></li>
+     <li class="but"><a href="{% url 'rd_filter_INTER' %}">interiéry</a></li>
+     <li class="but"><a href="{% url 'rd_filter_JINE' %}">jiné</a></li>
+   </ul>
+  </nav>
+
+
+</div>
+
+
+
+{% endblock %}
+{% block content %}
+{% for post in rd %}
+<div class="galllery">
+  <a href="{% url 'RD_detail' pk=post.pk %}">
+    <img src="{{ post.screen.url }}" alt="{{ post.name }}" height="250">
+  </a>
+  <div class="desc">{{ post.name }}</div>
+
+</div>
+{% endfor %}
+<div class="clear"></div>
+
+
+
+{% endblock %}
