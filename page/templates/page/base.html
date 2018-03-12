@@ -13,7 +13,7 @@
     {% block name %}
     {% endblock %}
 
-<script>
+<!--<script>
 function toggleClass(el){
 	var kids = document.getElementById('menu1').children;
 	for(var i = 0; i < kids.length; i++){
@@ -21,7 +21,7 @@ function toggleClass(el){
     }
 	el.className = "but2";
 }
-</script>
+</script>-->
 
   </head>
   <body>
@@ -31,9 +31,9 @@ function toggleClass(el){
       <nav>
 
         <ul id="menu1">
-         <li class="but2"  onclick="toggleClass(this)"><a href="{% url 'rd_list' %}">projekty</a></li>
-         <li class="but"  onclick="toggleClass(this)"><a href="{% url 'viz_list' %}">vizualizace</a></li>
-         <li class="but"  onclick="toggleClass(this)"><a href="{% url 'contact_list' %}">studio</a></li>
+         <li class="{% block RD %}{% endblock %}" class="p"  ><a href="{% url 'rd_list' %}">projekty</a></li>
+         <li class="{% block V %}{% endblock %}"  class="v" ><a href="{% url 'viz_list' %}">vizualizace</a></li>
+         <li class="{% block S %}{% endblock %}"  class="s" ><a href="{% url 'contact_list' %}">studio</a></li>
        </ul>
       </nav>
     </div>
