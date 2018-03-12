@@ -14,7 +14,7 @@ PROJEKTY_TYPES = (
 class Project(models.Model):
     name = models.CharField(max_length=100)
     text = models.TextField()
-    screen = models.ImageField(upload_to = 'page/static/screen_folder/', default = 'screen_folder/None/no-img.jpg')
+    screen = models.ImageField(upload_to = 'static/screen_folder/', default = 'screen_folder/None/no-img.jpg')
     published_date = models.DateTimeField(
         blank=True, null=True
     )
@@ -26,14 +26,14 @@ class Project_Photo(models.Model):
     rodinny_dum = models.ForeignKey(Project, on_delete=models.CASCADE)
     photo_name = models.CharField(max_length=200)
     number = models.IntegerField(blank=True, null=True)
-    photo = models.ImageField(upload_to = 'page/static/photo_folder/', default = 'photo_folder/None/no-img.jpg')
+    photo = models.ImageField(upload_to = 'static/photo_folder/', default = 'photo_folder/None/no-img.jpg')
 
     def __str__(self):
         return self.photo_name
 
 class Vizualizace(models.Model):
     name = models.CharField(max_length=200)
-    screen = models.ImageField(upload_to = 'page/static/screen_folder/', default = 'screen_folder/None/no-img.jpg')
+    screen = models.ImageField(upload_to = 'static/screen_folder/', default = 'screen_folder/None/no-img.jpg')
     published_date = models.DateTimeField(
         blank=True, null=True
     )
