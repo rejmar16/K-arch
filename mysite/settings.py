@@ -25,7 +25,10 @@ SECRET_KEY = 'qiuhzxali4eexhe1=ke^7wu=1&1n)%pzpaw*s0g2e$v*bxd+i!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mart91.pythonanywhere.com']
+ALLOWED_HOSTS = [
+    'mart91.pythonanywhere.com',
+    'www.k-arch.cz',
+]
 
 
 # Application definition
