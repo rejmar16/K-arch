@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'mart91.pythonanywhere.com',
     'www.k-arch.cz',
+    '*',
 ]
 
 
