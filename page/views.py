@@ -15,21 +15,22 @@ def viz_list(request):
     vizualizace = Vizualizace.objects.order_by('-published_date')
     return render(request, 'page/viz_list.html', {'vizualizace' : vizualizace})
 
-def RD_detail(request, pk):
+def RD_detail(request, pk, ip,):
     post = get_object_or_404(Project, pk=pk)
     photos = Project_Photo.objects.filter(rodinny_dum=pk).order_by('number')#.order_by('photo_name')
-    return render(request, 'page/RD_detail.html', {'post' : post , 'photos' : photos})
+    large = Project_Photo.objects.filter(rodinny_dum=pk).order_by('number').all()[int(ip)-1]
+    return render(request, 'page/RD_detail.html', {'post' : post , 'photos' : photos, 'large' : large,})
 
 def rd_filter_RD(request):
     rd = Project.objects.order_by('-published_date')
-    return render(request, 'page/rd_filter.html', {'rd' : rd , 'type': 'RD' , 'name' : 'Rodinne domy'})
+    return render(request, 'page/rd_filter.html', {'rd' : rd , 'type': 'RD' , 'name' : 'rodinne domy'})
 
 def rd_filter_INTER(request):
     rd = Project.objects.order_by('-published_date')
 
-    return render(request, 'page/rd_filter.html', {'rd' : rd, 'type': 'INTER' , 'name' : 'Interiery' })
+    return render(request, 'page/rd_filter.html', {'rd' : rd, 'type': 'INTER' , 'name' : 'interiery' })
 
 def rd_filter_JINE(request):
     rd = Project.objects.order_by('-published_date')
 
-    return render(request, 'page/rd_filter.html', {'rd' : rd, 'type': 'JINE' , 'name' : 'Jine'})
+    return render(request, 'page/rd_filter.html', {'rd' : rd, 'type': 'JINE' , 'name' : 'jine'})

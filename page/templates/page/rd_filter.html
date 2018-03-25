@@ -12,20 +12,20 @@
   <nav>
     <ul class="sf-menu">
       {% if 'RD' == type %}
-      <li class="but2"><a href="{% url 'rd_filter_RD' %}">rodinné domy</a></li>
+      <li class="but2">
       {% else %}
-      <li class="but"><a href="{% url 'rd_filter_RD' %}">rodinné domy</a></li>
-      {% endif %}
+      <li class="but">
+      {% endif %}<a href="{% url 'rd_filter_RD' %}">rodinné domy</a></li>
       {% if 'INTER' == type %}
-      <li class="but2"><a href="{% url 'rd_filter_INTER' %}">interiéry</a></li>
+      <li class="but2">
       {% else %}
-      <li class="but"><a href="{% url 'rd_filter_INTER' %}">interiéry</a></li>
-      {% endif %}
+      <li class="but">
+      {% endif %}<a href="{% url 'rd_filter_INTER' %}">interiéry</a></li>
       {% if 'JINE' == type %}
-      <li class="but2"><a href="{% url 'rd_filter_JINE' %}">jiné</a></li>
+      <li class="but2">
       {% else %}
-      <li class="but"><a href="{% url 'rd_filter_JINE' %}">jiné</a></li>
-      {% endif %}
+      <li class="but">
+      {% endif %}<a href="{% url 'rd_filter_JINE' %}">jiné</a></li>
    </ul>
   </nav>
 
@@ -37,7 +37,7 @@
   <div class="galllery">
 
     {% if post.type == type %}
-      <a href="{% url 'RD_detail' pk=post.pk %}">
+      <a href="{% url 'RD_detail' pk=post.pk ip=1 %}">
         <img src="{{ post.screen.url }}" alt="{{ post.name }}" width=300px>
       </a>
       <div class="desc">{{ post.name }}</div>
@@ -45,7 +45,7 @@
 
     {% else %}
     <!--<div style="opacity:0.5 ; filter:grayscale(100%)">-->
-      <a href="{% url 'RD_detail' pk=post.pk %}" style="opacity:0.5 ; filter:grayscale(100%)">
+      <a href="{% url 'RD_detail' pk=post.pk ip=1 %}" style="opacity:0.5 ; filter:grayscale(100%)">
         <img src="{{ post.screen.url }}" alt="{{ post.name }}" width=300px>
       </a>
       <div class="desc">{{ post.name }}</div>
