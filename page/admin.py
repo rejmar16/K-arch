@@ -7,6 +7,7 @@ class ProjectPhotoInLine(admin.TabularInline):
     model = Project_Photo
     extra = 3
 
+
 class ProjectAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Info',    {'fields' : ['name','type']}),
